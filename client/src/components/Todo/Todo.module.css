@@ -1,0 +1,53 @@
+.todo {
+    position: relative;
+    background-color: var(--dark);
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.5s;
+
+}
+
+
+.todo:hover{
+    opacity: 0.8;
+}
+
+.todo .check {
+    width: 20px;
+    height: 20px;
+    border-radius: 100px;
+    background-color: var(--dark-alt);
+    transition: 0.4s;
+    margin-right: 15px;
+}
+
+
+.todo .text {
+    font-size: 20px;
+}
+
+[class='Todo_todo__CE4ct isComplete']  .text {
+    text-decoration: line-through;
+}
+
+[class='Todo_todo__CE4ct isComplete'] .check{
+    background-color: var(--primary);
+    background-image: linear-gradient(to bottom,var(--primary),var(--secondary)) ;
+}
+
+.todo .deleteTodo{
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    color: var(--light);
+    background: #D81E5B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+}

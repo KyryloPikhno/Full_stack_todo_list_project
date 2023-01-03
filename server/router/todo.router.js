@@ -5,9 +5,9 @@ const controller = require("../controller/todo.controller");
 
 router.get('/', controller.getAll);
 
-router.post('/', controller.create);
+router.get('/:id', controller.update);
 
-router.put('/:id', controller.update);
+router.post('/', controller.create);
 
 router.delete('/:id', controller.delete);
 

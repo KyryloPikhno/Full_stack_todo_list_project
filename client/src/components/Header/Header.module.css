@@ -1,0 +1,18 @@
+.container{
+  width: 400px;
+  border: 1px solid orange;
+  padding: 10px;
+}
+
+.container h2{
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+.container p{
+  font-size: 18px;
+  color:var(--light-alt);
+  font-weight:200;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

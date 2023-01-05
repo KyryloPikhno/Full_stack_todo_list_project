@@ -43,7 +43,7 @@
     gap: 5px;
 }
 
-.popup input{
+.popup  input{
     height: 35px;
     width: 100%;
     background-color: var(--dark);

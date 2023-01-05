@@ -26,7 +26,7 @@ const TodoAdder = ({setActive}) => {
                 <h3>Add task</h3>
             <form onSubmit={handleSubmit(submit)}>
                 <input type="text"
-                       placeholder={'Enter task...'} {...register('text')}/>
+                       placeholder={'   Enter task...'} {...register('text')}/>
                 <button>Create task</button>
             </form>
         </div>

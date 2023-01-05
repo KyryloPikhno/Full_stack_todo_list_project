@@ -4,7 +4,7 @@ const Todo = require("../dataBase/Todo");
 module.exports = {
     getAll: async (req, res, next) => {
         try {
-            const todos = await Todo.find();
+            const todos = await Todo.find({});
 
             res.status(200).json(todos);
         } catch (e) {

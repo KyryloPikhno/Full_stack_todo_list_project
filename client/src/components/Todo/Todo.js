@@ -1,5 +1,5 @@
-import css from './Todo.module.css'
 import {todoService} from "../../services";
+import css from './Todo.module.css'
 
 
 const Todo = ({todo, setTodos}) => {
@@ -21,13 +21,10 @@ const Todo = ({todo, setTodos}) => {
         try {
             todoService.delete(id)
                 .then((response) => setTodos(todos => todos.filter(todo => todo._id !== response.data._id)))
-
             }catch (e){
             console.error("Error", e)
         }
     }
-
-
 
     return (
         <div className={css.todo + ' ' + (todo.complete ? 'isComplete' : '')}

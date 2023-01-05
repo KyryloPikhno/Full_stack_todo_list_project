@@ -1,15 +1,15 @@
 import {useEffect, useState} from "react";
 
 import {todoService} from "../../services";
+import {TodoAdder} from "../TodoAdder/TodoAdder";
 import {Todo} from "../Todo/Todo";
-import {Form} from "../Form/Form";
 import css from './Todos.module.css'
 
 
 const Todos = () => {
     const [todos, setTodos] = useState([]);
-    const [active, setActive] = useState([]);
 
+    const [active, setActive] = useState([]);
 
     useEffect(() => {
         try {
@@ -22,16 +22,19 @@ const Todos = () => {
 
     return (
         <div className={css.todos}>
-            {active &&
-                <div className={css.closePopup} onClick={() => setActive(false)}>
-                    X
-                    <div>
-                        <Form/>
-                    </div>
-                </div>
+            {
+                active &&
+                        <TodoAdder setActive={setActive}/>
             }
-            <div className={css.addTodo} onClick={() => setActive(true)}>+</div>
-            {todos && todos.map(todo => <Todo key={todo._id} setTodos={setTodos} todo={todo}/>)}
+            <div className={css.addTodo} onClick={() => setActive(true)}>
+                +
+            </div>
+            {
+                todos.length !== 0 ?
+                todos.map(todo => <Todo key={todo._id} setTodos={setTodos} todo={todo}/>)
+                    :
+                    <h3>Such empty 🥴</h3>
+            }
         </div>
     );
 };

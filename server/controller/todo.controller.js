@@ -14,9 +14,11 @@ module.exports = {
 
     create: async (req, res, next) => {
         try {
-            const todo = await Todo.create(req.body);
+            const todo = await Todo.create({
+                text: req.body.text
+            })
 
-            res.json(todo);
+            res.status(200).json(todo);
         } catch (e) {
             next(e);
         }
